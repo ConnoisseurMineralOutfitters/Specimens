@@ -17,9 +17,20 @@ header {
   margin-bottom: 1.5rem;
 }
 
+/* Logo image */
 .logo {
-  width: 85px; /* slightly smaller for mobile balance */
+  width: 85px;        /* balanced size for mobile + desktop */
   height: auto;
+}
+
+/* Three-line company name block */
+.company-name {
+  text-align: left;
+  font-weight: 600;
+  font-size: 1.35rem;
+  color: #333;
+  line-height: 1.25;
+  letter-spacing: 0.3px;
 }
 
 img {
