@@ -1,5 +1,6 @@
+/* --- Global --- */
 body {
-  Font -family: 'Segoe UI', Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   margin: 0;
   padding: 1.25rem;
   background-color: #fafafa;
@@ -33,6 +34,7 @@ header {
   letter-spacing: 0.3px;
 }
 
+/* --- Specimen Photo --- */
 img {
   max-width: 100%;
   height: auto;
@@ -40,16 +42,22 @@ img {
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
+/* --- Title --- */
 h1 {
   font-size: 1.4rem;
   margin: 0.5rem 0;
+  font-weight: 600;
+  color: #222;
 }
 
+/* --- Locality Text --- */
 p {
   margin: 0.25rem 0;
   font-size: 1rem;
+  color: #333;
 }
 
+/* --- Footer --- */
 footer {
   margin-top: 1.5rem;
   font-size: 0.8rem;
