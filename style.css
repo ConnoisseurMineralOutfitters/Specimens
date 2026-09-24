@@ -18,13 +18,11 @@ header {
   margin-bottom: 1.5rem;
 }
 
-/* Logo image */
 .logo {
-  width: 85px;        /* balanced size for mobile + desktop */
+  width: 85px;
   height: auto;
 }
 
-/* Three-line company name block */
 .company-name {
   text-align: left;
   font-weight: 600;
@@ -35,24 +33,75 @@ header {
 }
 
 /* --- Specimen Photo --- */
-img {
+.specimen-photo {
   max-width: 100%;
   height: auto;
   border-radius: 6px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  border: 1px solid #ccc;
 }
 
-/* --- Title --- */
-h1 {
-  font-size: 1.4rem;
-  margin: 0.5rem 0;
+/* --- Specimen Heading --- */
+.specimen-name {
+  font-size: 1.6rem;
   font-weight: 600;
   color: #222;
+  margin: 0.5rem 0 0.25rem 0;
 }
 
-/* --- Locality Text --- */
-p {
+.specimen-title {
+  font-size: 1.4rem;
+  font-style: italic;
+  font-weight: 500;
+  color: #222;
+  margin: -0.25em 0 0.5rem 0;
+}
+
+.specimen-id {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+
+/* --- Text Blocks --- */
+.locality,
+.purchase-info {
   margin: 0.25rem 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* --- Details Section --- */
+.details-section {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px;
+  margin-top: 1em;
+  text-align: left;
+}
+
+.details-heading {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+/* Individual detail lines */
+.storage,
+.tray,
+.size-class,
+.dimensions,
+.mass {
+  margin: 0.25rem 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* --- Properties --- */
+.properties-list {
+  margin-top: 0.5em;
   font-size: 1rem;
   color: #333;
 }
