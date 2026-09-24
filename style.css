@@ -68,14 +68,14 @@ header {
 .locality {
   margin-top: 0.25rem;
   margin-bottom: 1rem;  
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #333;
 }
 
 .purchase-info {
-  margin-top: 0.25rem;  
+  margin-top: 1rem;  
   margin-bottom: 0.25rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #333;
 }
 
