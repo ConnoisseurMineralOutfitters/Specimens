@@ -67,13 +67,13 @@ header {
 /* --- Text Blocks --- */
 .locality {
   margin-top: 0.25rem;
-  margin-bottom: 1rem;   /* one line of space AFTER locality */
+  margin-bottom: 1rem;  
   font-size: 1rem;
   color: #333;
 }
 
 .purchase-info {
-  margin-top: 0.25rem;   /* normal spacing */
+  margin-top: 0.25rem;  
   margin-bottom: 0.25rem;
   font-size: 1rem;
   color: #333;
