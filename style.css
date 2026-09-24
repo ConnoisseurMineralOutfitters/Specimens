@@ -50,7 +50,7 @@ header {
 }
 
 .specimen-title {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-style: italic;
   font-weight: 500;
   color: #222;
@@ -58,7 +58,7 @@ header {
 }
 
 .specimen-id {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 600;
   color: #444;
   margin-bottom: 0.5rem;
@@ -68,14 +68,14 @@ header {
 .locality {
   margin-top: 0.25rem;
   margin-bottom: 1rem;  
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #333;
 }
 
 .purchase-info {
   margin-top: 1rem;  
   margin-bottom: 0.25rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #333;
 }
 
