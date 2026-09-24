@@ -1,29 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Connoisseur Mineral Outfitters - Specimen</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+---
+layout: default
+title: Marcasite
+---
 
-  <header>
-    <img src="images/logo4.jpg" alt="CMO Logo" class="logo">
-    Connoisseur Mineral Outfitters
-  </header>
+{% include header.html %}
+<main class="specimen-page">
+  <section class="identity" style="text-align:center;">
+    <img src="images/01536.jpg" alt="Marcasite" style="max-width:100%;border:1px solid #ccc;">
+    <h1>Marcasite</h1>
+    <h2 class="title" style="margin-top:-0.25em;">"Skeletal Marcasite Spikes"</h2>
+    <h3 class="specimen-id">III-01536</h3>
+    <p class="locality">Austin, Travis County, Texas, USA</p>
+    <p class="purchase" style="margin-top:0.75em;">Purchased 4/26/2019 from Red Dog Minerals and Fossils for $65.00</p>
+  </section>
 
-  <img src="images/1536.jpg" alt="Marcasite">
-
-  <h1>Marcasite</h1>
-  <p>Locality: Walnut Creek, Travis Co., Texas, USA</p>
-
-<p>Mined by Barnett Fine Minerals</p>
-
-  <footer>
-    � Connoisseur Mineral Outfitters<br>
-    <a href="https://www.etsy.com/shop/ConnoisseurMineralOutfitters" target="_blank">Shop on Etsy</a>
-  </footer>
-
-</body>
-</html>
+  <section class="details" style="border:1px solid #ccc;border-radius:6px;padding:10px;margin-top:1em;">
+    <h3 style="margin-top:0;">Details</h3>
+    <p><strong>Storage:</strong> Flat</p>
+    <p><strong>Tray:</strong> 089 Mixed Dealers Miniatures</p>
+    <p><strong>Size class:</strong> Miniature (0)</p>
+    <p><strong>Dimensions:</strong> 4.5 × 3.0 × 2.3 cm</p>
+    <p><strong>Mass:</strong> 32 g</p>
+    <div class="properties" style="margin-top:0.5em;">
+      <label><input type="checkbox"> Magnetic</label><br>
+      <label><input type="checkbox"> Radioactive</label><br>
+      <label><input type="checkbox"> Light Sensitive</label><br>
+    </div>
+  </section>
+</main>
+{% include footer.html %}
