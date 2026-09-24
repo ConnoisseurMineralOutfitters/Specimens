@@ -1,0 +1,102 @@
+{% include header.html %}
+
+<div class="specimen-page">
+
+  <!-- Identity Block -->
+  <section class="identity">
+    <h1>Fluorite on Quartz</h1>
+    <h2 class="title">"The Wandering Crown"</h2>
+    <p class="locality">Minerva No. 1 Mine, Cave-in-Rock District, Hardin Co., Illinois, USA</p>
+
+    <div class="photo">
+      <img src="/images/10872.jpg" alt="Fluorite on Quartz">
+    </div>
+
+    <p class="dana">Dana Classification: 3.4.3.2</p>
+  </section>
+
+
+  <!-- Storage Location Block -->
+  <section class="storage">
+    <h3>Storage Location</h3>
+    <ul>
+      <li><strong>Cabinet:</strong> 3</li>
+      <li><strong>Drawer:</strong> 2</li>
+      <li><strong>Box:</strong> B</li>
+      <li><strong>Container ID:</strong> TH-22</li>
+      <li><strong>Last Verified:</strong> 2026-08-14</li>
+    </ul>
+  </section>
+
+
+  <!-- Acquisition Block -->
+  <section class="acquisition">
+    <h3>Acquisition Details</h3>
+    <ul>
+      <li><strong>Purchased from:</strong> Virgo Gems</li>
+      <li><strong>Date acquired:</strong> 2024-02-11</li>
+      <li><strong>Price paid:</strong> $425</li>
+      <li><strong>Purchase channel:</strong> Tucson Show</li>
+      <li><strong>Notes:</strong> Bundled with a small calcite; dealer claimed “blue crown pocket”.</li>
+    </ul>
+  </section>
+
+
+  <!-- Size & Dimensions Block -->
+  <section class="size">
+    <h3>Size & Dimensions</h3>
+    <ul>
+      <li><strong>Size class:</strong> Miniature</li>
+      <li><strong>Dimensions:</strong> 4.2 × 3.1 × 2.8 cm</li>
+      <li><strong>Weight:</strong> 118 g</li>
+    </ul>
+  </section>
+
+
+  <!-- Associations Block -->
+  <section class="associations">
+    <h3>Associated Minerals</h3>
+    <ul>
+      <li>Quartz</li>
+      <li>Minor Galena</li>
+      <li>Trace Calcite</li>
+    </ul>
+  </section>
+
+
+  <!-- Provenance Block -->
+  <section class="provenance">
+    <h3>Provenance</h3>
+    <ul>
+      <li><strong>Collection:</strong> ex Dennis Miller</li>
+      <li><strong>Mined:</strong> 1998</li>
+      <li><strong>Pocket:</strong> “Blue Crown Pocket” (unconfirmed)</li>
+      <li><strong>Previous owner:</strong> Dean Lagerwall Minerals</li>
+    </ul>
+  </section>
+
+
+  <!-- Diagnostic Properties Block -->
+  <section class="diagnostics">
+    <h3>Diagnostic Properties</h3>
+    <ul>
+      <li><strong>Color:</strong> Blue-purple zoning</li>
+      <li><strong>UV reaction:</strong> Strong blue under LW</li>
+      <li><strong>Magnetism:</strong> None</li>
+      <li><strong>Radioactivity:</strong> None</li>
+    </ul>
+  </section>
+
+
+  <!-- Internal Notes Block -->
+  <section class="internal-notes">
+    <h3>Internal Notes (Private)</h3>
+    <p>Matches zoning pattern of specimen 10879 — likely same pocket.</p>
+    <p>Best of three similar pieces from Virgo Gems.</p>
+    <p>Consider cross-polarized photography.</p>
+    <p>Good candidate for display rotation.</p>
+  </section>
+
+</div>
+
+{% include footer.html %}
