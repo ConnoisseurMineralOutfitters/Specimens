@@ -72,6 +72,13 @@ header {
   color: #333;
 }
 
+.provenance {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;  
+  font-size: 1rem;
+  color: #333;
+}
+
 .purchase-info {
   margin-top: 0.5rem;  
   margin-bottom: 1rem;
