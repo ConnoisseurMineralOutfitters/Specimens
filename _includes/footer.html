@@ -11,10 +11,24 @@
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-  const prevCatalogID = parseInt(document.querySelector('meta[name="prev-id"]')?.content || "0", 10);
-  const nextCatalogID = parseInt(document.querySelector('meta[name="next-id"]')?.content || "0", 10);
-  const footer = document.querySelector("footer");
+  // Extract current page ID from URL (fallback when metadata is missing)
+  const currentID = parseInt(
+    window.location.pathname.match(/(\d+)\.html$/)?.[1] || "0",
+    10
+  );
 
+  // Read metadata OR fall back to currentID ± 1
+  const prevCatalogID = parseInt(
+    document.querySelector('meta[name="prev-id"]')?.content || (currentID - 1),
+    10
+  );
+
+  const nextCatalogID = parseInt(
+    document.querySelector('meta[name="next-id"]')?.content || (currentID + 1),
+    10
+  );
+
+  const footer = document.querySelector("footer");
   if (!footer) return;
 
   const nav = document.createElement("div");
@@ -53,6 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
     findNextPublished(nextCatalogID)
   ]).then(([prevPublished, nextPublished]) => {
 
+    // Previous link
     if (prevPublished) {
       const prevLink = document.createElement("a");
       prevLink.href = `/Specimens/${prevPublished}.html`;
@@ -60,12 +75,14 @@ document.addEventListener("DOMContentLoaded", () => {
       nav.appendChild(prevLink);
     }
 
+    // Divider BETWEEN the links
     if (prevPublished && nextPublished) {
       const divider = document.createElement("span");
-    divider.textContent = " | ";
-    nav.appendChild(divider);
+      divider.textContent = " | ";
+      nav.appendChild(divider);
     }
 
+    // Next link
     if (nextPublished) {
       const nextLink = document.createElement("a");
       nextLink.href = `/Specimens/${nextPublished}.html`;
