@@ -60,6 +60,12 @@ document.addEventListener("DOMContentLoaded", () => {
       nav.appendChild(prevLink);
     }
 
+    if (prevPublished && nextPublished) {
+      const divider = document.createElement("span");
+    divider.textContent = " | ";
+    nav.appendChild(divider);
+    }
+
     if (nextPublished) {
       const nextLink = document.createElement("a");
       nextLink.href = `/Specimens/${nextPublished}.html`;
