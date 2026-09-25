@@ -3,4 +3,21 @@
   <a href="https://www.etsy.com/shop/ConnoisseurMineralOutfitters" target="_blank">Shop on Etsy</a>
   <a href="https://www.instagram.com/dennisd3miller" target="_blank">@dennisd3miller</a>
   <a href="https://www.instagram.com/crystalculprit" target="_blank">@crystalculprit</a>
+
+  <!-- Dynamic footer link -->
+  <a id="specimen-link" href="#" target="_blank"></a>
 </footer>
+
+<script>
+  // Read the specimen ID from the body
+  const idElement = document.getElementById("specimen-id");
+
+  if (idElement) {
+    const specimenID = idElement.textContent.trim();
+
+    // Build the link
+    const link = document.getElementById("specimen-link");
+    link.href = `/specimens/${specimenID}.html`;
+    link.textContent = `Specimen ${specimenID}`;
+  }
+</script>
