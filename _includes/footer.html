@@ -4,20 +4,31 @@
   <a href="https://www.instagram.com/dennisd3miller" target="_blank">@dennisd3miller</a>
   <a href="https://www.instagram.com/crystalculprit" target="_blank">@crystalculprit</a>
 
-  <!-- Dynamic footer link -->
-  <a id="specimen-link" href="#" target="_blank"></a>
+  <!-- Navigation container -->
+  <div id="specimen-nav"></div>
 </footer>
 
 <script>
-  // Read the specimen ID from the body
-  const idElement = document.getElementById("specimen-id");
+document.addEventListener("DOMContentLoaded", function() {
 
-  if (idElement) {
-    const specimenID = idElement.textContent.trim();
+  // Extract the filename from the URL
+  const path = window.location.pathname; 
+  // Example: "/Specimens/2862.html"
 
-    // Build the link
-    const link = document.getElementById("specimen-link");
-    link.href = `/specimens/${specimenID}.html`;
-    link.textContent = `Specimen ${specimenID}`;
+  const match = path.match(/\/Specimens\/(\d+)\.html$/i);
+
+  if (match) {
+    const id = parseInt(match[1], 10);
+    const prev = id - 1;
+    const next = id + 1;
+
+    const nav = document.getElementById("specimen-nav");
+
+    nav.innerHTML = `
+      <a href="/Specimens/${prev}.html">← Previous (${prev})</a>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <a href="/Specimens/${next}.html">Next (${next}) →</a>
+    `;
   }
+});
 </script>
