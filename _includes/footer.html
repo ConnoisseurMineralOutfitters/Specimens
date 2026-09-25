@@ -9,26 +9,66 @@
 </footer>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", () => {
 
-  // Extract the filename from the URL
-  const path = window.location.pathname; 
-  // Example: "/Specimens/2862.html"
+  const prevCatalogID = parseInt(document.querySelector('meta[name="prev-id"]')?.content || "0", 10);
+  const nextCatalogID = parseInt(document.querySelector('meta[name="next-id"]')?.content || "0", 10);
+  const footer = document.querySelector("footer");
 
-  const match = path.match(/\/Specimens\/(\d+)\.html$/i);
+  if (!footer) return;
 
-  if (match) {
-    const id = parseInt(match[1], 10);
-    const prev = id - 1;
-    const next = id + 1;
+  const nav = document.createElement("div");
+  nav.className = "catalog-nav";
 
-    const nav = document.getElementById("specimen-nav");
-
-    nav.innerHTML = `
-      <a href="/Specimens/${prev}.html">← Previous (${prev})</a>
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      <a href="/Specimens/${next}.html">Next (${next}) →</a>
-    `;
+  // Helper: check if a page exists using HEAD
+  function pageExists(id) {
+    return fetch(`../${id}.html`, { method: "HEAD" })
+      .then(res => res.ok)
+      .catch(() => false);
   }
+
+  // Find previous published page
+  async function findPrevPublished(startID) {
+    let id = startID;
+    while (id >= 3) {
+      if (await pageExists(id)) return id;
+      id--;
+    }
+    return null;
+  }
+
+  // Find next published page
+  async function findNextPublished(startID) {
+    let id = startID;
+    while (id >= 3) {
+      if (await pageExists(id)) return id;
+      id++;
+    }
+    return null;
+  }
+
+  // Build navigation once both checks complete
+  Promise.all([
+    findPrevPublished(prevCatalogID),
+    findNextPublished(nextCatalogID)
+  ]).then(([prevPublished, nextPublished]) => {
+
+    if (prevPublished) {
+      const prevLink = document.createElement("a");
+      prevLink.href = `../${prevPublished}.html`;
+      prevLink.textContent = "← Previous";
+      nav.appendChild(prevLink);
+    }
+
+    if (nextPublished) {
+      const nextLink = document.createElement("a");
+      nextLink.href = `../${nextPublished}.html`;
+      nextLink.textContent = "Next →";
+      nav.appendChild(nextLink);
+    }
+
+    footer.appendChild(nav);
+  });
+
 });
 </script>
