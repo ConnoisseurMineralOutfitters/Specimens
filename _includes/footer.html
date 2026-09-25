@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Helper: check if a page exists using HEAD
   function pageExists(id) {
-    return fetch(`../${id}.html`, { method: "HEAD" })
+    return fetch(`/Specimens/${id}.html`, { method: "HEAD" })
       .then(res => res.ok)
       .catch(() => false);
   }
@@ -55,14 +55,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (prevPublished) {
       const prevLink = document.createElement("a");
-      prevLink.href = `../${prevPublished}.html`;
+      prevLink.href = `/Specimens/${prevPublished}.html`;
       prevLink.textContent = "← Previous";
       nav.appendChild(prevLink);
     }
 
     if (nextPublished) {
       const nextLink = document.createElement("a");
-      nextLink.href = `../${nextPublished}.html`;
+      nextLink.href = `/Specimens/${nextPublished}.html`;
       nextLink.textContent = "Next →";
       nav.appendChild(nextLink);
     }
