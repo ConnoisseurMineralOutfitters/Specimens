@@ -114,6 +114,24 @@ header {
   color: #333;
 }
 
+.catalog-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+  margin-top: 0.75em;
+  font-weight: 500;
+}
+
+.catalog-nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+.catalog-nav a:hover {
+  text-decoration: underline;
+}
+
 /* --- Properties --- */
 .properties-list {
   margin-top: 0.5em;
