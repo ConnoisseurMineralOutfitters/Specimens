@@ -11,21 +11,27 @@
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-  // Extract current page ID from URL (fallback when metadata is missing)
+  // Extract current page ID from URL
   const currentID = parseInt(
     window.location.pathname.match(/(\d+)\.html$/)?.[1] || "0",
     10
   );
 
+  // Safe metadata parser
+  function safeID(metaValue, fallback) {
+    const n = parseInt(metaValue, 10);
+    return Number.isFinite(n) ? n : fallback;
+  }
+
   // Read metadata OR fall back to currentID ± 1
-  const prevCatalogID = parseInt(
-    document.querySelector('meta[name="prev-id"]')?.content || (currentID - 1),
-    10
+  const prevCatalogID = safeID(
+    document.querySelector('meta[name="prev-id"]')?.content,
+    currentID - 1
   );
 
-  const nextCatalogID = parseInt(
-    document.querySelector('meta[name="next-id"]')?.content || (currentID + 1),
-    10
+  const nextCatalogID = safeID(
+    document.querySelector('meta[name="next-id"]')?.content,
+    currentID + 1
   );
 
   const footer = document.querySelector("footer");
@@ -61,43 +67,36 @@ document.addEventListener("DOMContentLoaded", () => {
     return null;
   }
 
-// Build navigation once both checks complete
-Promise.all([
-  findPrevPublished(prevCatalogID),
-  findNextPublished(nextCatalogID)
-]).then(([prevPublished, nextPublished]) => {
+  // Build navigation once both checks complete
+  Promise.all([
+    findPrevPublished(prevCatalogID),
+    findNextPublished(nextCatalogID)
+  ]).then(([prevPublished, nextPublished]) => {
 
-  // Previous link
-  if (prevPublished) {
-    const prevLink = document.createElement("a");
-    prevLink.href = `/Specimens/${prevPublished}.html`;
-    prevLink.textContent = "← Previous";
-    nav.appendChild(prevLink);
-  }
+    if (prevPublished) {
+      const prevLink = document.createElement("a");
+      prevLink.href = `/Specimens/${prevPublished}.html`;
+      prevLink.textContent = "← Previous";
+      nav.appendChild(prevLink);
+    }
 
-  // Divider BETWEEN the links
-  if (prevPublished && nextPublished) {
-    const divider = document.createElement("span");
-    divider.textContent = " | ";
-    nav.appendChild(divider);
-  }
+    if (prevPublished && nextPublished) {
+      const divider = document.createElement("span");
+      divider.textContent = " | ";
+      nav.appendChild(divider);
+    }
 
-  // Next link
-  if (nextPublished) {
-    const nextLink = document.createElement("a");
-    nextLink.href = `/Specimens/${nextPublished}.html`;
-    nextLink.textContent = "Next →";
-    nav.appendChild(nextLink);
-  }
+    if (nextPublished) {
+      const nextLink = document.createElement("a");
+      nextLink.href = `/Specimens/${nextPublished}.html`;
+      nextLink.textContent = "Next →";
+      nav.appendChild(nextLink);
+    }
 
-  // ⭐ Only append nav if it has content
-  if (nav.childNodes.length > 0) {
-    footer.appendChild(nav);
-  }
-});
-
-
-    footer.appendChild(nav);
+    // Only append nav if it has content
+    if (nav.childNodes.length > 0) {
+      footer.appendChild(nav);
+    }
   });
 
 });
