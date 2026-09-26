@@ -61,34 +61,41 @@ document.addEventListener("DOMContentLoaded", () => {
     return null;
   }
 
-  // Build navigation once both checks complete
-  Promise.all([
-    findPrevPublished(prevCatalogID),
-    findNextPublished(nextCatalogID)
-  ]).then(([prevPublished, nextPublished]) => {
+// Build navigation once both checks complete
+Promise.all([
+  findPrevPublished(prevCatalogID),
+  findNextPublished(nextCatalogID)
+]).then(([prevPublished, nextPublished]) => {
 
-    // Previous link
-    if (prevPublished) {
-      const prevLink = document.createElement("a");
-      prevLink.href = `/Specimens/${prevPublished}.html`;
-      prevLink.textContent = "← Previous";
-      nav.appendChild(prevLink);
-    }
+  // Previous link
+  if (prevPublished) {
+    const prevLink = document.createElement("a");
+    prevLink.href = `/Specimens/${prevPublished}.html`;
+    prevLink.textContent = "← Previous";
+    nav.appendChild(prevLink);
+  }
 
-    // Divider BETWEEN the links
-    if (prevPublished && nextPublished) {
-      const divider = document.createElement("span");
-      divider.textContent = " | ";
-      nav.appendChild(divider);
-    }
+  // Divider BETWEEN the links
+  if (prevPublished && nextPublished) {
+    const divider = document.createElement("span");
+    divider.textContent = " | ";
+    nav.appendChild(divider);
+  }
 
-    // Next link
-    if (nextPublished) {
-      const nextLink = document.createElement("a");
-      nextLink.href = `/Specimens/${nextPublished}.html`;
-      nextLink.textContent = "Next →";
-      nav.appendChild(nextLink);
-    }
+  // Next link
+  if (nextPublished) {
+    const nextLink = document.createElement("a");
+    nextLink.href = `/Specimens/${nextPublished}.html`;
+    nextLink.textContent = "Next →";
+    nav.appendChild(nextLink);
+  }
+
+  // ⭐ Only append nav if it has content
+  if (nav.childNodes.length > 0) {
+    footer.appendChild(nav);
+  }
+});
+
 
     footer.appendChild(nav);
   });
