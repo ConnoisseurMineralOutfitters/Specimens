@@ -103,7 +103,7 @@ header {
   margin-bottom: 0.5rem;
 }
 
-/* Individual detail lines */
+/* Shared detail line styling */
 .storage,
 .tray,
 .luster,
@@ -113,6 +113,11 @@ header {
   margin: 0.25rem 0;
   font-size: 1rem;
   color: #333;
+}
+
+/* Numeric fields only */
+.dimensions,
+.mass {
   width: 5ch;
   overflow: hidden;
 }
