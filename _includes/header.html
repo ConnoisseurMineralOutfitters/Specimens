@@ -18,3 +18,53 @@
   </div>
 </header>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  // Read GUIDs from the script block your generator emits
+  const prevGUID = typeof PrevGUID !== "undefined" ? PrevGUID : "";
+  const nextGUID = typeof NextGUID !== "undefined" ? NextGUID : "";
+
+  // Build URLs only if GUIDs exist
+  const prevUrl = prevGUID ? `/Specimens/${prevGUID}.html` : "";
+  const nextUrl = nextGUID ? `/Specimens/${nextGUID}.html` : "";
+
+  // Get the anchor elements
+  const prevLink = document.getElementById("prevSpecimenLink");
+  const nextLink = document.getElementById("nextSpecimenLink");
+
+  // Helper: check if a page exists using HEAD request
+  function checkExists(url, callback) {
+    if (!url) {
+      callback(false);
+      return;
+    }
+
+    fetch(url, { method: "HEAD" })
+      .then(response => callback(response.ok))
+      .catch(() => callback(false));
+  }
+
+  // Previous specimen
+  checkExists(prevUrl, exists => {
+    if (exists) {
+      prevLink.href = prevUrl;
+      prevLink.style.visibility = "visible";
+    } else {
+      prevLink.style.visibility = "hidden";
+    }
+  });
+
+  // Next specimen
+  checkExists(nextUrl, exists => {
+    if (exists) {
+      nextLink.href = nextUrl;
+      nextLink.style.visibility = "visible";
+    } else {
+      nextLink.style.visibility = "hidden";
+    }
+  });
+
+});
+</script>
+
