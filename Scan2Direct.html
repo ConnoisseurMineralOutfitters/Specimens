@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Scan Redirect</title>
+<style>
+    body { font-family: sans-serif; padding: 40px; }
+    input { width: 100%; font-size: 24px; padding: 10px; }
+</style>
+<script>
+function go(e) {
+    const url = e.value.trim();
+    if (url.length > 0) window.location.href = url;
+}
+</script>
+</head>
+<body>
+<h2>Scan QR Code</h2>
+<input autofocus oninput="go(this)">
+</body>
+</html>
