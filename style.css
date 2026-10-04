@@ -22,14 +22,14 @@ header {
 /* Logo image */
 .logo {
   width: auto;
-  height: 85px;
+  height: 82px;
 }
 
 /* Three-line company name block */
 .company-name {
   text-align: left;
   font-weight: 600;
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   color: #333;
   line-height: 1.25;
   letter-spacing: 0.3px;
@@ -47,7 +47,7 @@ header {
 }
 
 .specimen-nav-icon {
-  height: 85px;
+  height: 82px;
   width: auto;
 }
 
