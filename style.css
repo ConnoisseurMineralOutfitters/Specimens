@@ -21,8 +21,8 @@ header {
 
 /* Logo image */
 .logo {
-  width: 85px;
-  height: auto;
+  width: auto;
+  height: 85px;
 }
 
 /* Three-line company name block */
@@ -179,11 +179,6 @@ footer {
   #specimen-nav {
     top: 0.25rem;
     padding: 0 0.5rem;
-  }
-
-  /* Reduce logo size slightly */
-  .logo {
-    width: 65px;
   }
 
   /* Reduce company name font size */
