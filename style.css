@@ -40,10 +40,10 @@ header {
   position: absolute;
   top: 0;                 /* adjust to align vertically with logo */
   left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;    /* pushes icons to page edges */
   align-items: center;
-  padding: 0 1.25rem;                /* optional: match body padding */
 }
 
 .specimen-nav-icon {
