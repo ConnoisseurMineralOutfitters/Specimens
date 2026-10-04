@@ -167,3 +167,33 @@ footer {
   font-size: 0.8rem;
   color: #777;
 }
+/* --- Mobile Fixes --- */
+@media (max-width: 600px) {
+
+.specimen-nav-icon {
+  width: auto;
+  height: 85px;
+}
+
+  /* Reposition nav bar so it doesn't collide with logo + name */
+  #specimen-nav {
+    top: 0.25rem;
+    padding: 0 0.5rem;
+  }
+
+  /* Reduce logo size slightly */
+  .logo {
+    width: 65px;
+  }
+
+  /* Reduce company name font size */
+  .company-name {
+    font-size: 1.1rem;
+    line-height: 1.2;
+  }
+
+  /* Reduce header gap */
+  header {
+    gap: 0.5rem;
+  }
+}
